@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="author" content="Carles Sánchez">
+    <meta name="description" content="Shopping Cart using JavaScript Drag and Drop functions">
+    <meta name="keywords" content="shopping, javascript, drag, drop, cart, HTML5, CSS, GeeksHubs">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"> 
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+    <title>Shopping Cart
+    </title> 
+  </head> 
+  <body> 
+    <div class="container"> 
+      <div class="row d-flex justify-content-center align-items-top my-5 drop-targets" > 
+        <main id="items" class="col-12 col-lg-8 p-3"> 
+          <h1 class="text-center"> Drag & Drop Shop 
+            <i class="fas fa-carrot"> 
+            </i> 
+          </h1> 
+          <div class="gallery row justify-content-center mt-5" id="gallery"> 
+            <!-- Product 1 --> 
+            <div id="fill1" class="fill1 container-image col-12 col-md-4"> 
+              <img id="drag-1" data-price="9.99" draggable="true" ondragstart="drag(event)" src="img/pack.jpg" class="img-fluid w-100 d-inline-block" alt="Pack Vegetables" /> 
+              <p class="d-block prod-text text-center mt-3"> Vegetables 
+                <i data-bs-toggle="tooltip" data-bs-placement="right" title="Broccoli, Lettuce, Tomatoes (3), Garlic (4), Red Pepper, Green Pepper, Corn & Potatoes (3)" class="fas fa-info-circle" > 
+                </i> 
+              </p> 
+              <p class="prod-price text-center d-flex justify-content-center align-items-center" id="prod-price" > 
+                <b class="price-strong" >9.99&euro; 
+                  <i data-bs-toggle="tooltip" data-bs-placement="right" title="Price/pack" class="fas fa-info-circle" > 
+                  </i> 
+                </b> &nbsp;&nbsp; 
+                <i draggable="true" data-bs-toggle="tooltip" data-bs-placement="top" title="Drag the Image!" class="fas fa-comment-dots shop-item-button" > 
+                </i> 
+              </p> 
+              <div class="add-btn d-flex justify-content-around align-items-center mb-5" > 
+                <button class="d-block btn btn-success shop-item-button"> Add to cart 
+                </button> 
+              </div> 
+            </div> 
+            <!-- Product 2 --> 
+            <div id="fill2" class="fill1 container-image col-12 col-md-4"> 
+              <img id="drag-2" data-price="1.99" draggable="true" ondragstart="drag(event)" src="img/potatoe.jpg" class="img-fluid w-100 d-block" alt="Potatoes" /> 
+              <p class="prod-title d-block prod-text text-center mt-3"> Potatoes 
+              </p> 
+              <p class="prod-price text-center d-flex justify-content-center align-items-center" id="prod-price" > 
+                <b class="price-strong" >1.99&euro; 
+                  <i data-bs-toggle="tooltip" data-bs-placement="right" title="Price/kg" class="fas fa-info-circle" > 
+                  </i> 
+                </b> &nbsp;&nbsp; 
+                <i data-bs-toggle="tooltip" data-bs-placement="top" title="Drag the Image!" class="fas fa-comment-dots shop-item-button" > 
+                </i> 
+              </p> 
+              <div class="add-btn d-flex justify-content-around align-items-center mb-5" > 
+                <button class="d-block btn btn-success shop-item-button"> Add to cart 
+                </button> 
+              </div> 
+            </div> 
+            <!-- Product 3 --> 
+            <div id="fill3" class="fill1 container-image col-12 col-md-4"> 
+              <img id="drag-3" data-price="1.59" draggable="true" ondragstart="drag(event)" src="img/lettuce.jpg" class="img-fluid w-100 d-block" alt="Lettuce" /> 
+              <p class="prod-title d-block prod-text text-center mt-3"> Lettuce 
+              </p> 
+              <p class="prod-price text-center d-flex justify-content-center align-items-center" id="prod-price" > 
+                <b class="price-strong" >1.59&euro; 
+                  <i data-bs-toggle="tooltip" data-bs-placement="right" title="Price/unit" class="fas fa-info-circle" > 
+                  </i> 
+                </b> &nbsp;&nbsp; 
+                <i data-bs-toggle="tooltip" data-bs-placement="top" title="Drag the Image!" class="fas fa-comment-dots shop-item-button" > 
+                </i> 
+              </p> 
+              <div class="add-btn d-flex justify-content-around align-items-center mb-5" > 
+                <button class="d-block btn btn-success shop-item-button"> Add to cart 
+                </button> 
+              </div> 
+            </div> 
+            <!-- Product 4 --> 
+            <div id="fill4" class="fill1 container-image col-12 col-md-4"> 
+              <img id="drag-4" data-price="2.19" draggable="true" ondragstart="drag(event)" src="img/cucumber.jpg" class="img-fluid w-100 d-block" alt="Cucumber" /> 
+              <p class="prod-title d-block prod-text text-center mt-3"> Cucumber 
+              </p> 
+              <p class="prod-price text-center d-flex justify-content-center align-items-center" id="prod-price" > 
+                <b class="price-strong" >2.19&euro; 
+                  <i data-bs-toggle="tooltip" data-bs-placement="right" title="Price/kg" class="fas fa-info-circle" > 
+                  </i> 
+                </b> &nbsp;&nbsp; 
+                <i data-bs-toggle="tooltip" data-bs-placement="top" title="Drag the Image!" class="fas fa-comment-dots shop-item-button" > 
+                </i> 
+              </p> 
+              <div class="add-btn d-flex justify-content-around align-items-center mb-5" > 
+                <button class="d-block btn btn-success shop-item-button"> Add to cart 
+                </button> 
+              </div> 
+            </div> 
+            <!-- Product 5 --> 
+            <div id="fill5" class="fill1 container-image col-12 col-md-4"> 
+              <img id="drag-5" data-price="2.99" draggable="true" ondragstart="drag(event)" src="img/pumpkin.jpg" class="img-fluid w-100 d-block" alt="Pumpkin" /> 
+              <p class="prod-title d-block prod-text text-center mt-3"> Pumpkin 
+              </p> 
+              <p class="prod-price text-center d-flex justify-content-center align-items-center" id="prod-price" > 
+                <b class="price-strong" >2.99&euro; 
+                  <i data-bs-toggle="tooltip" data-bs-placement="right" title="Price/unit" class="fas fa-info-circle" > 
+                  </i> 
+                </b> &nbsp;&nbsp; 
+                <i data-bs-toggle="tooltip" data-bs-placement="top" title="Drag the Image!" class="fas fa-comment-dots shop-item-button" > 
+                </i> 
+              </p> 
+              <div class="add-btn d-flex justify-content-around align-items-center mb-5" > 
+                <button class="d-block btn btn-success shop-item-button"> Add to cart 
+                </button> 
+              </div> 
+            </div> 
+            <!-- Product 6 --> 
+            <div id="fill6" class="fill1 container-image col-12 col-md-4"> 
+              <img id="drag-6" data-price="1.29" draggable="true" ondragstart="drag(event)" src="img/zucchini.jpg" class="img-fluid w-100 d-block" alt="Zucchini" /> 
+              <p class="prod-title d-block prod-text text-center mt-3"> Zucchini 
+              </p> 
+              <p class="prod-price text-center d-flex justify-content-center align-items-center" id="prod-price" > 
+                <b class="price-strong" >1.29&euro; 
+                  <i data-bs-toggle="tooltip" data-bs-placement="right" title="Price/kg" class="fas fa-info-circle" > 
+                  </i> 
+                </b> &nbsp;&nbsp; 
+                <i data-bs-toggle="tooltip" data-bs-placement="top" title="Drag the Image!" class="fas fa-comment-dots shop-item-button" > 
+                </i> 
+              </p> 
+              <div class="add-btn d-flex justify-content-around align-items-center mb-5" > 
+                <button class="d-block btn btn-success shop-item-button"> Add to cart 
+                </button> 
+              </div> 
+            </div> 
+          </div> 
+        </main> 
+        <!-- Cart --> 
+        <aside class="col-12 col-lg-4"> 
+          <h2 class="text-center"> Your Cart 
+            <i class="fas fa-shopping-basket"> 
+            </i> 
+          </h2> 
+          <!-- Products --> 
+          <div id="boxes" class="boxes shop-cart" ondragover="allowDrop(event)" ondrop="drop(event)" >
+          </div> 
+          <!-- Cart Items --> 
+          <div class="cart-items"> 
+            <!-- Selected Products goes here --> 
+          </div> 
+          <!-- Price --> 
+          <div class="d-flex justify-content-center"> 
+            <div class="cart-total"> 
+              <strong class="cart-total-title">Total 
+              </strong> 
+              <span class="cart-total-price">0 
+              </span> 
+            </div> 
+          </div> 
+          <button class="btn btn-dark btn-purchase">PURCHASE
+          </button> 
+        </aside> 
+      </div> 
+    </div> 
+    <!-- SCRIPTS --> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous" >
+    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous" >
+    </script> 
+    <script type="text/javascript" src="js/scripts.js" async>
+    </script> 
+  </body>
+</html>
