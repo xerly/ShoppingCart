@@ -1,4 +1,4 @@
-# ShoppingCart
+# Shopping Cart
 ### Simple shopping cart using the drag &amp; drop method with Vanilla Javascript
 
 In this RETO 2 I had to create a list of items/products with their respective prices and with a drag & drop method put them in a shopping cart
